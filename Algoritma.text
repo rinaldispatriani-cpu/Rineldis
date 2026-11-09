@@ -1,0 +1,33 @@
+Algoritma Penyelesaian Sistem Persamaan Linear (SPL) 3 Variabel
+Mata kuliah: Komputasi Numerik 
+Materi: Sistem Persamaan Linear tiga variabel 
+Metode: Eliminasi Gauss dengan pivot parsial
+1. Tujuan
+Menyelesaikan diketahui tiga persamaan linier dengan tiga variabel tak, yaitu x , y , dan z , menggunakan operasi baris elementer sampai diperoleh nilai setiap variabel.
+2. Bentuk umum
+Sistem persamaan linear tiga variabel dapat ditulis sebagai:
+\[
+\begin{aligned} a_1x+b_1y+c_1z&=d_1\\ a_2x+b_2y+c_2z&=d_2\\ a_3x+b_3y+c_3z&=d_3 \end{aligned}
+\]
+Koefisien dan konstanta disusun menjadi matriks augmented:
+\[
+\left[\begin{array}{ccc|c} a_1&b_1&c_1&d_1\\ a_2&b_2&c_2&d_2\\ a_3&b_3&c_3&d_3 \end{array}\right]
+\]
+3. Metode yang digunakan
+Metode eliminasi Gauss mengubah matriks augmented menjadi bentuk segitiga atas. Setelah itu, nilai variabel dicari dengan substitusi balik.
+
+Pada pivot parsial, sebelum eliminasi di suatu kolom, baris dengan nilai absolut koefisien terbesar pada kolom tersebut dipilih sebagai baris pivot. Cara ini membantu mengurangi pembagian risiko dengan angka yang sangat kecil.
+4. Algoritma langkah demi langkah
+1. Mulai.
+2. Masukkan koefisien persamaan dan konstanta ruas kanan.
+3. Bentuk matriks augmented berukuran 3×4.
+4. Untuk setiap kolom pivot dari kolom pertama sampai kolom ketiga:
+   - Cari baris dengan nilai mutlak koefisien terbesar pada kolom pivot, mulai dari baris aktif sampai baris terakhir.
+   - Tukar baris aktif dengan baris pivot pilihan jika diperlukan.
+   - Jika nilai pivot mendekati nol, periksa sistem karena solusi tunggal mungkin tidak ada.
+   - Untuk setiap baris di bawah pivot, hitung faktor eliminasi.
+   - Kurangi baris tersebut dengan faktor eliminasi dikalikan baris pivot agar elemen di bawah pivot menjadi nol.
+5. Setelah matriks berbentuk segitiga atas, periksa konsistensi sistem. Baris dengan seluruh koefisien nol tetapi konstanta bukan nol berarti sistem tidak memiliki solusi.
+6. Lakukan substitusi balik untuk memperoleh z , kemudian y , lalu x .
+7. Tampilkan nilai x , y , dan z .
+8. Selesai.
